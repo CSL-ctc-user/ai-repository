@@ -1,31 +1,31 @@
 ﻿ai_assets:
-  - name: openai-quickstart-python
-    type: llm-application
-    provider: OpenAI
-    repository_path: external-samples/openai-quickstart-python
-    expected_detection:
-      - OpenAI API usage
-      - chat completion
-      - assistants
-      - environment variable based API key
-
-  - name: amazon-bedrock-samples
-    type: bedrock-ai-examples
-    provider: AWS Bedrock
-    repository_path: external-samples/amazon-bedrock-samples
-    expected_detection:
-      - Bedrock model invocation
-      - agents and function calling
-      - RAG examples
-      - embeddings
-      - foundation model usage
-
-  - name: amazon-bedrock-rag
-    type: rag-application
-    provider: AWS Bedrock
-    repository_path: external-samples/amazon-bedrock-rag
-    expected_detection:
-      - Knowledge Bases for Amazon Bedrock
-      - retrieval augmented generation
-      - backend and frontend application code
-      - RAG pipeline
+  - name: simple-bedrock-helpdesk-agent
+    category: agent
+    repository: csl-ctc/ai-repository
+    source_path: simple_agent/helpdesk_agent_bedrock.py
+    framework: OpenAI Agents SDK
+    connector: LiteLLM
+    model_provider: Amazon Bedrock
+    model_id: amazon.nova-pro-v1:0
+    model_reference: bedrock/amazon.nova-pro-v1:0
+    runtime: Python
+    expected_noma_categories:
+      - Models
+      - Pipeline Jobs
+      - Notebooks
+    related_assets:
+      notebook: notebooks/bedrock_helpdesk_agent_validation.ipynb
+      pipeline_job: .github/workflows/ai-ml-validation-pipeline.yml
+      model_card: models/bedrock-nova-pro-helpdesk/README.md
+      model_config: models/bedrock-nova-pro-helpdesk/model_config.json
+      model_usage: models/bedrock-nova-pro-helpdesk/model_usage.py
+    detection_signals:
+      - Agent
+      - Runner
+      - OpenAI Agents SDK
+      - LiteLLM
+      - LitellmModel
+      - Amazon Bedrock
+      - bedrock/amazon.nova-pro-v1:0
+      - BEDROCK_MODEL
+      - AWS_REGION

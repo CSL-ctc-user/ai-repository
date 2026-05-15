@@ -1,0 +1,29 @@
+﻿{
+  "asset_type": "model",
+  "name": "bedrock-nova-pro-helpdesk-model",
+  "provider": "Amazon Bedrock",
+  "model_id": "amazon.nova-pro-v1:0",
+  "model_reference": "bedrock/amazon.nova-pro-v1:0",
+  "region": "us-east-1",
+  "used_by": [
+    "simple_agent/helpdesk_agent_bedrock.py"
+  ],
+  "frameworks": [
+    "OpenAI Agents SDK",
+    "LiteLLM"
+  ],
+  "environment_variables": [
+    "BEDROCK_MODEL",
+    "AWS_REGION",
+    "AWS_DEFAULT_REGION"
+  ],
+  "intended_use": "Simple helpdesk AI agent validation for Noma GitHub SCM scanning",
+  "asset_signals": [
+    "Amazon Bedrock",
+    "amazon.nova-pro-v1:0",
+    "bedrock/amazon.nova-pro-v1:0",
+    "LitellmModel",
+    "Agent",
+    "Runner"
+  ]
+}

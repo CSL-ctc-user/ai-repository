@@ -1,0 +1,49 @@
+﻿name: AI ML Validation Pipeline
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "simple_agent/**"
+      - "notebooks/**"
+      - "models/**"
+      - "ai-inventory.yaml"
+      - "requirements-simple-agent.txt"
+
+jobs:
+  ai-ml-asset-validation:
+    name: Validate AI ML assets
+    runs-on: ubuntu-latest
+
+    env:
+      BEDROCK_MODEL: bedrock/amazon.nova-pro-v1:0
+      AWS_REGION: us-east-1
+      AI_AGENT_SOURCE: simple_agent/helpdesk_agent_bedrock.py
+      AI_MODEL_CONFIG: models/bedrock-nova-pro-helpdesk/model_config.json
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Detect AI agent source code
+        run: |
+          echo "Scanning AI agent source code"
+          grep -R "Agent" simple_agent || true
+          grep -R "Runner" simple_agent || true
+          grep -R "LitellmModel" simple_agent || true
+          grep -R "bedrock/amazon.nova-pro-v1:0" simple_agent models || true
+
+      - name: Validate AI model metadata
+        run: |
+          echo "Validating model metadata"
+          test -f models/bedrock-nova-pro-helpdesk/model_config.json
+          cat models/bedrock-nova-pro-helpdesk/model_config.json
+
+      - name: Validate notebooks
+        run: |
+          echo "Validating notebook assets"
+          test -f notebooks/bedrock_helpdesk_agent_validation.ipynb
+          grep -R "Amazon Bedrock" notebooks || true
+          grep -R "OpenAI Agents SDK" notebooks || true
