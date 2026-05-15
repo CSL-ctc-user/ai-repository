@@ -1,0 +1,31 @@
+﻿ai_assets:
+  - name: openai-quickstart-python
+    type: llm-application
+    provider: OpenAI
+    repository_path: external-samples/openai-quickstart-python
+    expected_detection:
+      - OpenAI API usage
+      - chat completion
+      - assistants
+      - environment variable based API key
+
+  - name: amazon-bedrock-samples
+    type: bedrock-ai-examples
+    provider: AWS Bedrock
+    repository_path: external-samples/amazon-bedrock-samples
+    expected_detection:
+      - Bedrock model invocation
+      - agents and function calling
+      - RAG examples
+      - embeddings
+      - foundation model usage
+
+  - name: amazon-bedrock-rag
+    type: rag-application
+    provider: AWS Bedrock
+    repository_path: external-samples/amazon-bedrock-rag
+    expected_detection:
+      - Knowledge Bases for Amazon Bedrock
+      - retrieval augmented generation
+      - backend and frontend application code
+      - RAG pipeline
