@@ -1,3 +1,5 @@
 ﻿openai-agents
 litellm
 boto3
+scikit-learn
+joblib

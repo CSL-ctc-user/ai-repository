@@ -29,3 +29,25 @@
       - bedrock/amazon.nova-pro-v1:0
       - BEDROCK_MODEL
       - AWS_REGION
+
+  - name: iris-classifier-random-forest
+    category: model
+    repository: csl-ctc/ai-repository
+    source_path: models/iris-classifier/train_model.py
+    model_artifact: models/iris-classifier/iris_classifier.joblib
+    model_config: models/iris-classifier/model_config.json
+    model_card: models/iris-classifier/README.md
+    framework: scikit-learn
+    algorithm: RandomForestClassifier
+    dataset: sklearn.datasets.load_iris
+    runtime: Python
+    expected_noma_categories:
+      - Models
+    detection_signals:
+      - scikit-learn
+      - RandomForestClassifier
+      - joblib
+      - iris_classifier.joblib
+      - trained model
+      - model artifact
+      - classification model

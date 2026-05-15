@@ -1,0 +1,26 @@
+﻿{
+  "asset_type": "model",
+  "name": "iris-classifier-random-forest",
+  "model_file": "iris_classifier.joblib",
+  "model_format": "joblib",
+  "framework": "scikit-learn",
+  "algorithm": "RandomForestClassifier",
+  "dataset": "sklearn.datasets.load_iris",
+  "task": "classification",
+  "source_files": [
+    "models/iris-classifier/train_model.py",
+    "models/iris-classifier/predict.py"
+  ],
+  "feature_count": 4,
+  "class_count": 3,
+  "intended_use": "Validation model artifact for Noma GitHub Models scanning",
+  "detection_signals": [
+    "scikit-learn",
+    "RandomForestClassifier",
+    "joblib",
+    "model artifact",
+    "trained model",
+    "classification model",
+    "iris_classifier.joblib"
+  ]
+}
