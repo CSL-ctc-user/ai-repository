@@ -3,3 +3,6 @@ litellm
 boto3
 scikit-learn
 joblib
+torch
+transformers
+safetensors

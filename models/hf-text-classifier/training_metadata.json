@@ -1,0 +1,27 @@
+{
+  "asset_type": "model",
+  "name": "hf-text-classifier",
+  "base_model": "google/bert_uncased_L-2_H-128_A-2",
+  "tokenizer": "bert-base-uncased",
+  "framework": "PyTorch",
+  "library": "Hugging Face Transformers",
+  "task": "text-classification",
+  "labels": {
+    "0": "general_helpdesk",
+    "1": "ai_security"
+  },
+  "training_samples": 8,
+  "source_file": "data_science/hf_text_classifier_training.py",
+  "model_directory": "models/hf-text-classifier",
+  "detection_signals": [
+    "Hugging Face",
+    "PyTorch",
+    "Transformers",
+    "AutoTokenizer",
+    "AutoModelForSequenceClassification",
+    "from_pretrained",
+    "save_pretrained",
+    "text-classification",
+    "model artifact"
+  ]
+}

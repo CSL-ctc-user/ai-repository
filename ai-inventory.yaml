@@ -73,3 +73,30 @@
       - trained model
       - model artifact
       - classification model
+
+  - name: hf-text-classifier
+    category: model
+    repository: csl-ctc/ai-repository
+    source_path: data_science/hf_text_classifier_training.py
+    inference_path: data_science/hf_text_classifier_inference.py
+    model_directory: models/hf-text-classifier
+    framework: PyTorch
+    library: Hugging Face Transformers
+    base_model: google/bert_uncased_L-2_H-128_A-2
+    tokenizer: bert-base-uncased
+    task: text-classification
+    runtime: Python
+    expected_noma_categories:
+      - Models
+      - Notebooks
+    detection_signals:
+      - Hugging Face
+      - PyTorch
+      - Transformers
+      - AutoTokenizer
+      - AutoModelForSequenceClassification
+      - from_pretrained
+      - save_pretrained
+      - text-classification
+      - model.safetensors
+      - model artifact
