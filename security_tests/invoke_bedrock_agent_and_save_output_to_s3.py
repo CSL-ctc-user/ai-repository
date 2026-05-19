@@ -8,9 +8,9 @@ import boto3
 
 APP_NAME = "bedrock-agent-output-s3-test"
 
-BEDROCK_AGENT_ID = os.environ.get("BMP4H1GSLT")
-BEDROCK_AGENT_ALIAS_ID = os.environ.get("W9KNJ5LMXY")
-S3_BUCKET = os.environ.get("noma-access-test")
+BEDROCK_AGENT_ID = os.environ.get("BEDROCK_AGENT_ID")
+BEDROCK_AGENT_ALIAS_ID = os.environ.get("BEDROCK_AGENT_ALIAS_ID")
+S3_BUCKET = os.environ.get("AGENT_OUTPUT_S3_BUCKET")
 
 
 DUMMY_TEST_PROMPT = """
