@@ -37,6 +37,10 @@ def validate_settings() -> None:
 
 
 def invoke_bedrock_agent(prompt: str) -> dict:
+    
+    print("=== DEBUG PROMPT ===")
+    print(prompt)
+
     """
     Invoke an existing Amazon Bedrock Agent and collect the final response.
     """
