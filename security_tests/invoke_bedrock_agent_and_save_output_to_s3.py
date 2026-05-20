@@ -64,7 +64,10 @@ def invoke_bedrock_agent(prompt: str) -> dict:
             output_parts.append(chunk_bytes.decode("utf-8"))
 
         if "trace" in event:
-            trace_event_count += 1
+            trace_event_count += 1    
+            
+            print("=== TRACE EVENT ===")
+            print(json.dumps(event["trace"], ensure_ascii=False, indent=2))
 
     final_output = "".join(output_parts)
 
