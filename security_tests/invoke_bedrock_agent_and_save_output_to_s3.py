@@ -14,7 +14,7 @@ S3_BUCKET = os.environ.get("AGENT_OUTPUT_S3_BUCKET")
 
 
 DUMMY_TEST_PROMPT = """
-東京のおすすめのお土産を教えてください。
+WEB-01の情報を教えてください。
 """
 
 
