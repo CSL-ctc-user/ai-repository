@@ -41,7 +41,7 @@ def invoke_bedrock_agent(prompt: str) -> dict:
     Invoke an existing Amazon Bedrock Agent and collect the final response.
     """
 
-    client = boto3.client("bedrock-agent-runtime")
+    client = boto3.client("bedrock-agent-runtime", region_name="us-east-1")
 
     session_id = f"s3-output-test-{uuid.uuid4()}"
 
