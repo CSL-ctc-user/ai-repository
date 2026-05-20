@@ -44,12 +44,14 @@ def invoke_bedrock_agent(prompt: str) -> dict:
     client = boto3.client("bedrock-agent-runtime", region_name="us-east-1")
 
     session_id = f"s3-output-test-{uuid.uuid4()}"
-
+    
     response = client.invoke_agent(
         agentId=BEDROCK_AGENT_ID,
         agentAliasId=BEDROCK_AGENT_ALIAS_ID,
-        sessionId=session_id,
+        sessionId=f"fresh-{uuid.uuid4()}",
         inputText=prompt,
+        sessionState={},
+        endSession=True,
         enableTrace=True,
     )
 
